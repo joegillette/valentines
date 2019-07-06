@@ -1,0 +1,90 @@
+body {
+	margin: 0;
+}
+
+@keyframes background-anima {
+	0% {
+		background-color: deeppink;
+	}
+	50% {
+		background-color: lightpink;
+	}
+	100% {
+		background-color: deeppink;
+	}
+}
+
+#container {
+	height: 100vh;
+	background-color: pink;
+	display: flex;
+	align-items: center;
+	animation-name: background-anima;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+	animation-fill-mode: forwards;
+}
+
+@keyframes heart-animated {
+	0% {
+		transform: scale(1) rotate(-45deg);
+	}
+	50% {
+		transform: scale(1.4) rotate(-45deg);
+	}
+	100% {
+		transform: scale(1) rotate(-45deg);
+	}
+}
+
+.heart {
+	width: 200px;
+	height: 200px;
+	background-color: hotpink;
+	transform: rotate(-45deg);
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	animation-name: heart-animated;
+	animation-duration: 1s;
+	animation-fill-mode: fowards;
+	animation-iteration-count: infinite;
+}
+
+.heart::before {
+	content: "";
+	width: 200px;
+	height: 200px;
+	position: absolute;
+	bottom: 100px;
+	background-color: hotpink;
+	border-radius: 50%;
+}
+
+.heart::after {
+	content: "";
+	width: 200px;
+	height: 200px;
+	position: absolute;
+	left: 100px;
+	background-color: hotpink;
+	border-radius: 50%;
+}
+
+.heart h1 {
+	transform: rotate(45deg);
+	color: white;
+	position: relative;
+	bottom: 20px;
+	left: 20px;
+	z-index: 3;
+	font-size: 40px;
+	font-family: lobster;
+}
+
+.message {
+	text-align: center;
+}
